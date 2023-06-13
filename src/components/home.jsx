@@ -13,7 +13,7 @@ import DownArrowImage from "../images/down-arrow.svg";
 function Home() {
   return (
     <Container>
-      <Wrap bgImage={Model3}>
+      <Wrap id='model3' bgImage={Model3}>
         <ItemText>
           <Title>
             <h1>Model 3</h1>
@@ -45,6 +45,7 @@ function Home() {
             <LeftButton>Custom Order</LeftButton>
             <RightButton>Existing Inventory</RightButton>
           </ButtonGroup>
+          <DownArrow/>
         </Buttons>
       </Wrap>
 
@@ -62,6 +63,7 @@ function Home() {
             <LeftButton>Custom Order</LeftButton>
             <RightButton>Existing Inventory</RightButton>
           </ButtonGroup>
+          <DownArrow/>
         </Buttons>
       </Wrap>
 
@@ -79,6 +81,7 @@ function Home() {
             <LeftButton>Custom Order</LeftButton>
             <RightButton>Existing Inventory</RightButton>
           </ButtonGroup>
+          <DownArrow/>
         </Buttons>
       </Wrap>
 
@@ -96,6 +99,7 @@ function Home() {
             <LeftButton>Order Now</LeftButton>
             <RightButton>Learn More</RightButton>
           </ButtonGroup>
+          <DownArrow/>
         </Buttons>
       </Wrap>
 
@@ -113,6 +117,7 @@ function Home() {
             <LeftButton>Order Now</LeftButton>
             <RightButton>Learn More</RightButton>
           </ButtonGroup>
+          <DownArrow/>
         </Buttons>
       </Wrap>
 
@@ -126,6 +131,7 @@ function Home() {
           <ButtonGroup>
             <LeftButton>Shop Now</LeftButton>
           </ButtonGroup>
+          <DownArrow/>
         </Buttons>
       </Wrap>
     </Container>
@@ -204,7 +210,9 @@ const RightButton = styled(LeftButton)`
 `;
 
 const DownArrow = styled.img`
-  margin-top: 20px;
+  margin: auto;
+  display: flex;
+  align-items: center;
   height: 40px;
   overflow-x: hidden;
   animation: animateDown infinite 1.5s;

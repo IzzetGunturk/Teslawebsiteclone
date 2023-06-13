@@ -13,7 +13,7 @@ function Header() {
 
       <Menu>
         <a href="#">Model S</a>
-        <a href="#">Model 3</a>
+        <a href="#model3">Model 3</a>
         <a href="#">Model X</a>
         <a href="#">Model Y</a>
         <a href="#">Solar Roof</a>
@@ -132,7 +132,7 @@ const MenuButtonOpen = styled.div`
       border-radius: 5px;
       transition: .2s;
       width: 100px;
-      padding: 5px 1px;
+      padding: 5px 30px;
   }
 `
 
