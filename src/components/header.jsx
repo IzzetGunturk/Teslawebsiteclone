@@ -7,17 +7,17 @@ function Header() {
 
   return (
     <Container>
-      <a href='#'>
-        <img src={Logo} alt='' />
+      <a href='#home'>
+        <img src={Logo} alt='logo' />
       </a>
 
       <Menu>
-        <a href="#">Model S</a>
+        <a href="#models">Model S</a>
         <a href="#model3">Model 3</a>
-        <a href="#">Model X</a>
-        <a href="#">Model Y</a>
-        <a href="#">Solar Roof</a>
-        <a href="#">Solar Panels</a>
+        <a href="#modelx">Model X</a>
+        <a href="#modely">Model Y</a>
+        <a href="#solarroof">Solar Roof</a>
+        <a href="#solarpanel">Solar Panels</a>
       </Menu>
 
       <RightMenu>

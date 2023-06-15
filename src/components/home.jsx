@@ -6,13 +6,34 @@ import ModelS from "../images/model-s.jpg";
 import ModelX from "../images/model-x.jpg";
 import SolarPanel from "../images/solar-panel.jpg";
 import SolarRoof from "../images/solar-roof.jpg";
-import Accessories from "../images/accessories.jpg";
+import Accessoires from "../images/accessories.jpg";
 import DownArrowImage from "../images/down-arrow.svg";
+import Promovideotesla from "../images/promovideotesla.mp4"
 
 
 function Home() {
   return (
     <Container>
+      <Wrap id='home'>
+        <VideoBackground autoPlay loop muted>
+          <source src={Promovideotesla} type="video/mp4" />
+        </VideoBackground>
+        <ItemText>
+          <Title>
+            <h1 className='frontpage'>Experience Tesla</h1>
+          </Title>
+          <Description>
+            <p className='frontpage'>Schedule a Demo Drive Today</p>
+          </Description>
+        </ItemText>
+        <Buttons>
+          <ButtonGroup>
+            <Button>Demo Drive</Button>
+          </ButtonGroup>
+          <DownArrow src={DownArrowImage} />
+        </Buttons>
+      </Wrap>
+
       <Wrap id='model3' bgImage={Model3}>
         <ItemText>
           <Title>
@@ -24,14 +45,14 @@ function Home() {
         </ItemText>
         <Buttons>
           <ButtonGroup>
-            <LeftButton>Custom Order</LeftButton>
-            <RightButton>Demo drive</RightButton>
+            <LeftButton>Explore inventory</LeftButton>
+            <RightButton>Custom Order</RightButton>
           </ButtonGroup>
-          <DownArrow src={DownArrowImage} />
+          <DownArrow/>
         </Buttons>
       </Wrap>
 
-      <Wrap bgImage={ModelY}>
+      <Wrap id='modely' bgImage={ModelY}>
         <ItemText>
           <Title>
             <h1>Model Y</h1>
@@ -42,14 +63,14 @@ function Home() {
         </ItemText>
         <Buttons>
           <ButtonGroup>
-            <LeftButton>Custom Order</LeftButton>
-            <RightButton>Existing Inventory</RightButton>
+          <LeftButton>Explore inventory</LeftButton>
+            <RightButton>Custom Order</RightButton>
           </ButtonGroup>
           <DownArrow/>
         </Buttons>
       </Wrap>
 
-      <Wrap bgImage={ModelS}>
+      <Wrap id='models' bgImage={ModelS}>
         <ItemText>
           <Title>
             <h1>Model S</h1>
@@ -60,14 +81,14 @@ function Home() {
         </ItemText>
         <Buttons>
           <ButtonGroup>
-            <LeftButton>Custom Order</LeftButton>
-            <RightButton>Existing Inventory</RightButton>
+            <LeftButton>Explore inventory</LeftButton>
+            <RightButton>Custom Order</RightButton>
           </ButtonGroup>
           <DownArrow/>
         </Buttons>
       </Wrap>
 
-      <Wrap bgImage={ModelX}>
+      <Wrap id='modelx' bgImage={ModelX}>
         <ItemText>
           <Title>
             <h1>Model X</h1>
@@ -78,14 +99,14 @@ function Home() {
         </ItemText>
         <Buttons>
           <ButtonGroup>
-            <LeftButton>Custom Order</LeftButton>
-            <RightButton>Existing Inventory</RightButton>
+            <LeftButton>Explore inventory</LeftButton>
+            <RightButton>Custom Order</RightButton>
           </ButtonGroup>
           <DownArrow/>
         </Buttons>
       </Wrap>
 
-      <Wrap bgImage={SolarPanel}>
+      <Wrap id='solarpanel' bgImage={SolarPanel}>
         <ItemText>
           <Title>
             <h1>Solar Panels</h1>
@@ -96,14 +117,14 @@ function Home() {
         </ItemText>
         <Buttons>
           <ButtonGroup>
-            <LeftButton>Order Now</LeftButton>
-            <RightButton>Learn More</RightButton>
+            <LeftButton>Explore inventory</LeftButton>
+            <RightButton>Custom Order</RightButton>
           </ButtonGroup>
           <DownArrow/>
         </Buttons>
       </Wrap>
 
-      <Wrap bgImage={SolarRoof}>
+      <Wrap id='solarroof' bgImage={SolarRoof}>
         <ItemText>
           <Title>
             <h1>Solar Roof</h1>
@@ -114,22 +135,22 @@ function Home() {
         </ItemText>
         <Buttons>
           <ButtonGroup>
-            <LeftButton>Order Now</LeftButton>
-            <RightButton>Learn More</RightButton>
+            <LeftButton>Explore inventory</LeftButton>
+            <RightButton>Custom Order</RightButton>
           </ButtonGroup>
           <DownArrow/>
         </Buttons>
       </Wrap>
 
-      <Wrap bgImage={Accessories}>
+      <Wrap id='accessoires' bgImage={Accessoires}>
         <ItemText>
           <Title>
-            <h1>Accessories</h1>
+            <h1>Accessoires</h1>
           </Title>
         </ItemText>
         <Buttons>
           <ButtonGroup>
-            <LeftButton>Shop Now</LeftButton>
+            <RightButton>Shop Now</RightButton>
           </ButtonGroup>
           <DownArrow/>
         </Buttons>
@@ -163,6 +184,16 @@ const Wrap = styled.div`
   scroll-snap-stop: always;
 `;
 
+const VideoBackground = styled.video`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+`;
+
 const ItemText = styled.div`
   padding-top: 15vh;
   text-align: center;
@@ -187,7 +218,7 @@ const ButtonGroup = styled.div`
   }
 `;
 
-const LeftButton = styled.div`
+const RightButton = styled.div`
   background-color: rgba(23, 26, 32, 0.8);
   height: 40px;
   width: 256px;
@@ -203,10 +234,16 @@ const LeftButton = styled.div`
   margin: 8px;
 `;
 
-const RightButton = styled(LeftButton)`
+const LeftButton = styled(RightButton)`
   background-color: white;
   color: black;
   opacity: 0.65;
+`;
+
+const Button = styled(RightButton)`
+  background-color: transparent;
+  color: white;
+  border: 3px solid white;
 `;
 
 const DownArrow = styled.img`
