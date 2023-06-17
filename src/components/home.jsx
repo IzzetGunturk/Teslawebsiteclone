@@ -182,6 +182,9 @@ const Wrap = styled.div`
   align-items: center;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  @media (max-width: 768px) {
+    background-attachment: scroll;
+  }
 `;
 
 const VideoBackground = styled.video`
