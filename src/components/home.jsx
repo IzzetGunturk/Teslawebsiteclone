@@ -12,6 +12,65 @@ import Promovideotesla from "../images/promovideotesla.mp4"
 
 
 function Home() {
+  const modelsData = [
+    {
+      id: 'model3',
+      title: 'Model 3',
+      description: 'Leasing starting at $399/mo',
+      leftbutton: 'Explore inventory',
+      rightbutton: 'Custom Order',
+      image: Model3
+    },
+    {
+      id: 'modely',
+      title: 'Model Y',
+      description: 'Order Online for Touchless Delivery',
+      leftbutton: 'Explore inventory',
+      rightbutton: 'Custom Order',
+      image: ModelY
+    },
+    {
+      id: 'models',
+      title: 'Model S',
+      description: 'Order Online for Touchless Delivery',
+      leftbutton: 'Explore inventory',
+      rightbutton: 'Custom Order',
+      image: ModelS
+    },
+    {
+      id: 'modelx',
+      title: 'Model X',
+      description: 'Order Online for Touchless Delivery',
+      leftbutton: 'Explore inventory',
+      rightbutton: 'Custom Order',
+      image: ModelX
+    },
+    {
+      id: 'solarpanel',
+      title: 'Solar Panels',
+      description: 'Lowest Cost Solar Panels in America',
+      leftbutton: 'Explore inventory',
+      rightbutton: 'Custom Order',
+      image: SolarPanel
+    },
+    {
+      id: 'solarroof',
+      title: 'Solar Roof',
+      description: 'Produce Clean Energy From Your Roof',
+      leftbutton: 'Explore inventory',
+      rightbutton: 'Custom Order',
+      image: SolarRoof
+    },
+    {
+      id: 'accessoires',
+      title: 'Accessoires',
+      description: 'Produce Clean Energy From Your Roof',
+      leftbutton: '',
+      rightbutton: 'Shop now',
+      image: Accessoires
+    },
+  ];
+
   return (
     <Container>
       <Wrap id='home'>
@@ -34,127 +93,29 @@ function Home() {
         </Buttons>
       </Wrap>
 
-      <Wrap id='model3' bgImage={Model3}>
-        <ItemText>
-          <Title>
-            <h1>Model 3</h1>
-          </Title>
-          <Description>
-            <p>Leasing starting at $399/mo</p>
-          </Description>
-        </ItemText>
-        <Buttons>
-          <ButtonGroup>
-            <LeftButton>Explore inventory</LeftButton>
-            <RightButton>Custom Order</RightButton>
-          </ButtonGroup>
-          <DownArrow/>
-        </Buttons>
-      </Wrap>
-
-      <Wrap id='modely' bgImage={ModelY}>
-        <ItemText>
-          <Title>
-            <h1>Model Y</h1>
-          </Title>
-          <Description>
-            <p>Order Online for Touchless Delivery</p>
-          </Description>
-        </ItemText>
-        <Buttons>
-          <ButtonGroup>
-          <LeftButton>Explore inventory</LeftButton>
-            <RightButton>Custom Order</RightButton>
-          </ButtonGroup>
-          <DownArrow/>
-        </Buttons>
-      </Wrap>
-
-      <Wrap id='models' bgImage={ModelS}>
-        <ItemText>
-          <Title>
-            <h1>Model S</h1>
-          </Title>
-          <Description>
-            <p>Order Online for Touchless Delivery</p>
-          </Description>
-        </ItemText>
-        <Buttons>
-          <ButtonGroup>
-            <LeftButton>Explore inventory</LeftButton>
-            <RightButton>Custom Order</RightButton>
-          </ButtonGroup>
-          <DownArrow/>
-        </Buttons>
-      </Wrap>
-
-      <Wrap id='modelx' bgImage={ModelX}>
-        <ItemText>
-          <Title>
-            <h1>Model X</h1>
-          </Title>
-          <Description>
-            <p>Order Online for Touchless Delivery</p>
-          </Description>
-        </ItemText>
-        <Buttons>
-          <ButtonGroup>
-            <LeftButton>Explore inventory</LeftButton>
-            <RightButton>Custom Order</RightButton>
-          </ButtonGroup>
-          <DownArrow/>
-        </Buttons>
-      </Wrap>
-
-      <Wrap id='solarpanel' bgImage={SolarPanel}>
-        <ItemText>
-          <Title>
-            <h1>Solar Panels</h1>
-          </Title>
-          <Description>
-            <p>Lowest Cost Solar Panels in America</p>
-          </Description>
-        </ItemText>
-        <Buttons>
-          <ButtonGroup>
-            <LeftButton>Explore inventory</LeftButton>
-            <RightButton>Custom Order</RightButton>
-          </ButtonGroup>
-          <DownArrow/>
-        </Buttons>
-      </Wrap>
-
-      <Wrap id='solarroof' bgImage={SolarRoof}>
-        <ItemText>
-          <Title>
-            <h1>Solar Roof</h1>
-          </Title>
-          <Description>
-            <p>Produce Clean Energy From Your Roof</p>
-          </Description>
-        </ItemText>
-        <Buttons>
-          <ButtonGroup>
-            <LeftButton>Explore inventory</LeftButton>
-            <RightButton>Custom Order</RightButton>
-          </ButtonGroup>
-          <DownArrow/>
-        </Buttons>
-      </Wrap>
-
-      <Wrap id='accessoires' bgImage={Accessoires}>
-        <ItemText>
-          <Title>
-            <h1>Accessoires</h1>
-          </Title>
-        </ItemText>
-        <Buttons>
-          <ButtonGroup>
-            <RightButton>Shop Now</RightButton>
-          </ButtonGroup>
-          <DownArrow/>
-        </Buttons>
-      </Wrap>
+      {modelsData.map((model, index) => (
+        <Wrap key={index} id={model.id} bgImage={model.image}>
+          <ItemText>
+            <Title>
+              <h1>{model.title}</h1>
+            </Title>
+            <Description>
+              <p>{model.description}</p>
+            </Description>
+          </ItemText>
+          <Buttons>
+            <ButtonGroup>
+            {model.leftbutton && (
+              <LeftButton>{model.leftbutton}</LeftButton>
+            )}
+            {model.rightbutton && (
+              <RightButton>{model.rightbutton}</RightButton>
+            )}
+            </ButtonGroup>
+            <DownArrow/>
+          </Buttons>
+        </Wrap>
+      ))}
     </Container>
   );
 }
